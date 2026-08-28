@@ -1,0 +1,2930 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Weekend 🌿</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family:
+        "Segoe UI",
+        system-ui,
+        sans-serif;
+
+    color: #40554b;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255,255,255,.9),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(220,210,255,.55),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #d9f5e5,
+            #f0faf5,
+            #e9defa
+        );
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.32);
+
+    filter: blur(3px);
+
+    animation:
+        glowFloat
+        12s
+        ease-in-out
+        infinite;
+}
+
+.glow:nth-child(1) {
+    width: 180px;
+    height: 180px;
+    top: 8%;
+    left: 5%;
+}
+
+.glow:nth-child(2) {
+    width: 270px;
+    height: 270px;
+    right: -80px;
+    top: 40%;
+    animation-delay: 3s;
+}
+
+.glow:nth-child(3) {
+    width: 130px;
+    height: 130px;
+    left: 20%;
+    bottom: 8%;
+    animation-delay: 5s;
+}
+
+.glow:nth-child(4) {
+    width: 200px;
+    height: 200px;
+    right: 20%;
+    top: 20%;
+    animation-delay: 7s;
+}
+
+@keyframes glowFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-35px)
+            scale(1.1);
+    }
+}
+
+
+/* =========================================================
+   SPARKLES
+========================================================= */
+
+.spark {
+    position: fixed;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 8px white,
+        0 0 16px rgba(255,255,255,.9);
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation:
+        sparkleMove
+        linear
+        forwards;
+}
+
+@keyframes sparkleMove {
+
+    0% {
+        transform:
+            translateY(105vh)
+            translateX(0)
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-10vh)
+            translateX(100px)
+            scale(1.1);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   BUTTERFLIES
+========================================================= */
+
+.butterfly {
+    position: fixed;
+
+    font-size: 22px;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation:
+        butterflyFly
+        linear
+        forwards;
+}
+
+@keyframes butterflyFly {
+
+    0% {
+        transform:
+            translate(-50px,100vh)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translate(50vw,45vh)
+            rotate(15deg);
+    }
+
+    100% {
+        transform:
+            translate(110vw,-20vh)
+            rotate(-15deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+    position: relative;
+    z-index: 2;
+}
+
+section {
+    min-height: 100vh;
+
+    padding:
+        70px 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn {
+    border: none;
+
+    padding:
+        15px 30px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,.78);
+
+    color: #536b5e;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 35px
+        rgba(70,90,80,.14);
+
+    backdrop-filter:
+        blur(12px);
+
+    transition:
+        .3s ease;
+}
+
+.btn:hover {
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 18px 40px
+        rgba(70,90,80,.2);
+}
+
+.btn:active {
+    transform:
+        scale(.95);
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-btn {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 999;
+
+    border: none;
+
+    padding:
+        13px 20px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,.78);
+
+    backdrop-filter:
+        blur(12px);
+
+    color: #536b5e;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(70,90,80,.15);
+
+    transition:
+        .3s;
+}
+
+.music-btn:hover {
+    transform:
+        translateY(-4px)
+        scale(1.04);
+}
+
+.music-btn.playing {
+    animation:
+        musicPulse
+        1.5s
+        infinite;
+}
+
+@keyframes musicPulse {
+
+    0%,100% {
+        box-shadow:
+            0 10px 30px
+            rgba(70,90,80,.15);
+    }
+
+    50% {
+        box-shadow:
+            0 10px 35px
+            rgba(146,122,184,.4);
+    }
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    text-align: center;
+    flex-direction: column;
+}
+
+.weekend-label {
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: #71877b;
+
+    margin-bottom: 20px;
+
+    animation:
+        fadeDown
+        1.2s
+        ease;
+}
+
+.intro h1 {
+    font-size:
+        clamp(
+            48px,
+            10vw,
+            90px
+        );
+
+    line-height: .95;
+
+    color: #405c4d;
+
+    margin-bottom: 25px;
+
+    animation:
+        titleAppear
+        1.5s
+        ease;
+}
+
+.intro h1 span {
+    color: #927ab8;
+}
+
+.intro p {
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: #61766c;
+
+    margin-bottom: 40px;
+
+    animation:
+        fadeUp
+        1.5s
+        .3s
+        both;
+}
+
+@keyframes titleAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   PHOTO SECTION
+========================================================= */
+
+.photo-section {
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.photo-section h2 {
+    font-size:
+        clamp(
+            32px,
+            7vw,
+            52px
+        );
+
+    color: #536d5f;
+
+    margin-bottom: 12px;
+}
+
+.photo-subtitle {
+    color: #718078;
+
+    margin-bottom: 35px;
+
+    font-size: 17px;
+}
+
+
+/* PHOTO FRAME */
+
+.photo-frame {
+
+    position: relative;
+
+    width:
+        min(330px, 80vw);
+
+    height:
+        min(400px, 100vw);
+
+    padding: 10px;
+
+    border-radius: 35px;
+
+    background:
+        rgba(255,255,255,.72);
+
+    box-shadow:
+        0 25px 70px
+        rgba(70,90,80,.18);
+
+    backdrop-filter:
+        blur(15px);
+
+    animation:
+        photoFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+.photo-frame::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -8px;
+
+    border-radius: 42px;
+
+    border:
+        2px solid
+        rgba(255,255,255,.7);
+
+    animation:
+        photoGlow
+        3s
+        ease-in-out
+        infinite;
+
+    pointer-events: none;
+}
+
+.photo-frame::after {
+
+    
+
+    position: absolute;
+
+    right: -18px;
+
+    top: -18px;
+
+    font-size: 42px;
+
+    animation:
+        heartFloat
+        2.5s
+        ease-in-out
+        infinite;
+}
+
+.photo-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 28px;
+
+    display: block;
+}
+
+@keyframes photoFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-1deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(1deg);
+    }
+}
+
+@keyframes photoGlow {
+
+    0%,100% {
+        opacity: .4;
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.025);
+    }
+}
+
+@keyframes heartFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(8deg);
+    }
+}
+
+.photo-message {
+
+    margin-top: 35px;
+
+    max-width: 600px;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: #64776e;
+}
+
+.photo-message strong {
+    color: #856da9;
+}
+
+
+/* =========================================================
+   WEEKEND MESSAGE
+========================================================= */
+
+.weekend-section {
+    flex-direction: column;
+}
+
+.weekend-card {
+
+    width:
+        min(850px,100%);
+
+    padding:
+        55px 35px;
+
+    border-radius: 35px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,.66);
+
+    border:
+        1px solid
+        rgba(255,255,255,.75);
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 25px 70px
+        rgba(70,90,80,.12);
+
+    animation:
+        cardFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes cardFloat {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-9px);
+    }
+}
+
+.weekend-icon {
+
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    animation:
+        weekendIcon
+        3s
+        ease-in-out
+        infinite;
+}
+
+@keyframes weekendIcon {
+
+    0%,100% {
+        transform:
+            rotate(-5deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(5deg)
+            translateY(-10px);
+    }
+}
+
+.weekend-card h2 {
+
+    font-size:
+        clamp(
+            32px,
+            7vw,
+            52px
+        );
+
+    color: #536d5f;
+
+    margin-bottom: 25px;
+}
+
+.weekend-card p {
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: #63776e;
+}
+
+.weekend-card strong {
+    color: #856da9;
+}
+
+
+/* =========================================================
+   REST
+========================================================= */
+
+.rest-section {
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.rest-section h2 {
+
+    font-size:
+        clamp(
+            32px,
+            7vw,
+            52px
+        );
+
+    color: #536d5f;
+
+    margin-bottom: 15px;
+}
+
+.rest-subtitle {
+
+    color: #718078;
+
+    margin-bottom: 40px;
+
+    font-size: 17px;
+}
+
+.rest-grid {
+
+    width:
+        min(950px,100%);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 22px;
+}
+
+.rest-card {
+
+    padding:
+        35px 25px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255,255,255,.55);
+
+    backdrop-filter:
+        blur(15px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.6);
+
+    transition:
+        .4s ease;
+}
+
+.rest-card:hover {
+
+    transform:
+        translateY(-12px)
+        rotate(1deg);
+
+    box-shadow:
+        0 20px 45px
+        rgba(70,90,80,.12);
+}
+
+.rest-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.rest-card h3 {
+
+    color: #5c7066;
+
+    margin-bottom: 12px;
+}
+
+.rest-card p {
+
+    color: #718078;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CHECKLIST
+========================================================= */
+
+.checklist-section {
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.checklist-section h2 {
+
+    font-size:
+        clamp(
+            32px,
+            7vw,
+            50px
+        );
+
+    color: #536d5f;
+
+    margin-bottom: 15px;
+}
+
+.checklist-section > p {
+
+    color: #718078;
+
+    margin-bottom: 35px;
+}
+
+.checklist {
+
+    width:
+        min(600px,100%);
+
+    padding: 30px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.63);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 20px 55px
+        rgba(70,90,80,.1);
+}
+
+.task {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    margin-bottom: 10px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.55);
+
+    cursor: pointer;
+
+    transition:
+        .3s;
+
+    text-align: left;
+}
+
+.task:hover {
+    transform:
+        translateX(5px);
+}
+
+.task input {
+
+    width: 20px;
+
+    height: 20px;
+
+    accent-color:
+        #927ab8;
+}
+
+.task.done {
+
+    opacity: .6;
+
+    text-decoration:
+        line-through;
+}
+
+.progress-container {
+
+    margin-top: 25px;
+}
+
+.progress-bar {
+
+    height: 10px;
+
+    background:
+        rgba(100,120,110,.12);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b8dfc8,
+            #cbbbe4
+        );
+
+    transition:
+        .5s;
+}
+
+.progress-text {
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    color: #718078;
+}
+
+
+/* =========================================================
+   QUOTES
+========================================================= */
+
+.motivation {
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.motivation h2 {
+
+    font-size:
+        clamp(
+            32px,
+            7vw,
+            52px
+        );
+
+    color: #536d5f;
+
+    margin-bottom: 15px;
+}
+
+.motivation-subtitle {
+
+    color: #718078;
+
+    margin-bottom: 40px;
+}
+
+.quote-box {
+
+    width:
+        min(750px,100%);
+
+    min-height: 190px;
+
+    padding: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 20px 55px
+        rgba(70,90,80,.1);
+
+    margin-bottom: 30px;
+}
+
+.quote {
+
+    font-size:
+        clamp(
+            20px,
+            4vw,
+            27px
+        );
+
+    line-height: 1.7;
+
+    color: #5d7067;
+}
+
+.quote.animate {
+
+    animation:
+        quoteAnimation
+        .7s
+        ease;
+}
+
+@keyframes quoteAnimation {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(.85)
+            rotate(-2deg);
+    }
+
+    60% {
+
+        transform:
+            scale(1.04)
+            rotate(1deg);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+
+/* =========================================================
+   MOOD
+========================================================= */
+
+.mood-section {
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.mood-section h2 {
+
+    font-size:
+        clamp(
+            32px,
+            7vw,
+            50px
+        );
+
+    color: #536d5f;
+
+    margin-bottom: 15px;
+}
+
+.mood-section > p {
+
+    color: #718078;
+
+    margin-bottom: 35px;
+}
+
+.moods {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    max-width: 700px;
+}
+
+.mood {
+
+    border: none;
+
+    padding:
+        15px 22px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,.7);
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    color: #5f7169;
+
+    transition:
+        .3s;
+}
+
+.mood:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+}
+
+.mood-result {
+
+    margin-top: 35px;
+
+    min-height: 80px;
+
+    max-width: 650px;
+
+    padding: 20px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.6);
+
+    color: #63776e;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    transition:
+        .4s;
+}
+
+
+/* =========================================================
+   YOU GOT THIS
+========================================================= */
+
+.you-got-this {
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.you-got-this h2 {
+
+    font-size:
+        clamp(
+            38px,
+            8vw,
+            70px
+        );
+
+    color: #536d5f;
+
+    margin-bottom: 20px;
+
+    animation:
+        gentlePulse
+        3s
+        infinite;
+}
+
+@keyframes gentlePulse {
+
+    0%,100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.04);
+    }
+}
+
+.you-got-this p {
+
+    max-width: 680px;
+
+    font-size: 19px;
+
+    line-height: 2;
+
+    color: #687b72;
+
+    margin-bottom: 35px;
+}
+
+.you-got-this strong {
+
+    color: #856da9;
+}
+
+
+/* =========================================================
+   BURST
+========================================================= */
+
+.burst-piece {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    font-size: 22px;
+
+    animation:
+        burst
+        1.6s
+        ease-out
+        forwards;
+}
+
+@keyframes burst {
+
+    0% {
+
+        transform:
+            translate(0,0)
+            scale(.3);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(1.3);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final {
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.final-heart {
+
+    font-size: 85px;
+
+    margin-bottom: 25px;
+
+    animation:
+        heartbeat
+        1.5s
+        infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.18);
+    }
+}
+
+.final h2 {
+
+    font-size:
+        clamp(
+            38px,
+            8vw,
+            68px
+        );
+
+    color: #536d5f;
+
+    margin-bottom: 25px;
+}
+
+.final p {
+
+    max-width: 680px;
+
+    font-size: 19px;
+
+    line-height: 2;
+
+    color: #687b72;
+}
+
+.final strong {
+
+    color: #856da9;
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   PETALS
+========================================================= */
+
+.petal {
+
+    position: fixed;
+
+    top: -30px;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    font-size: 22px;
+
+    animation:
+        fall
+        linear
+        forwards;
+}
+
+@keyframes fall {
+
+    0% {
+
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    text-align: center;
+
+    padding:
+        30px 20px 50px;
+
+    color: #809087;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px) {
+
+    section {
+        padding:
+            55px 18px;
+    }
+
+    .intro h1 {
+        font-size:
+            55px;
+    }
+
+    .intro p {
+        font-size:
+            16px;
+    }
+
+    .photo-frame {
+
+        width:
+            min(280px, 78vw);
+
+        height:
+            min(350px, 100vw);
+    }
+
+    .weekend-card {
+        padding:
+            40px 22px;
+    }
+
+    .weekend-card p {
+        font-size:
+            16px;
+
+        line-height:
+            1.8;
+    }
+
+    .rest-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .quote-box {
+        min-height:
+            210px;
+
+        padding:
+            25px 20px;
+    }
+
+    .quote {
+        font-size:
+            19px;
+    }
+
+    .checklist {
+        padding:
+            20px 15px;
+    }
+
+    .task {
+        padding:
+            15px;
+    }
+
+    .music-btn {
+
+        right:
+            15px;
+
+        bottom:
+            15px;
+
+        padding:
+            11px 16px;
+
+        font-size:
+            13px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background">
+
+    <div class="glow"></div>
+    <div class="glow"></div>
+    <div class="glow"></div>
+    <div class="glow"></div>
+
+</div>
+
+
+<!-- =========================================================
+     MUSIC
+========================================================= -->
+
+<audio
+    id="bgMusic"
+    loop
+    preload="auto">
+
+    <source
+        src="jasonmraz.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<button
+    class="music-btn"
+    id="musicBtn"
+    onclick="toggleMusic()">
+
+    🎵 Music
+
+</button>
+
+
+<main>
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="intro">
+
+    <div class="weekend-label">
+        A little weekend reminder
+    </div>
+
+    <h1>
+        Happy<br>
+        <span>Weekend.</span> 🌿
+    </h1>
+
+    <p>
+
+        Hey you...
+
+        <br><br>
+
+        I know you've had a lot on your mind lately.
+
+        So before you worry about everything else,
+
+        I just want you to remember one thing:
+
+        <br><br>
+
+        <strong>
+            You deserve a peaceful weekend too.
+        </strong>
+
+    </p>
+
+    <button
+        class="btn"
+        onclick="scrollToPhoto()">
+
+        There's something for you ✨
+
+    </button>
+
+</section>
+
+
+
+<!-- =========================================================
+     PHOTO
+========================================================= -->
+
+<section
+    class="photo-section"
+    id="photo">
+
+    <h2>
+        This is your reminder. 
+    </h2>
+
+    <p class="photo-subtitle">
+        Don't forget to take care of this person.
+    </p>
+
+
+    <div class="photo-frame">
+
+        <!--
+            CHANGE her-photo.jpg
+            TO YOUR ACTUAL PHOTO FILE NAME
+        -->
+
+        <img
+            src="Jenny.jpg"
+            alt="A beautiful reminder of you">
+
+    </div>
+
+
+    <p class="photo-message">
+
+        Look at you. 🌷
+
+        <br><br>
+
+        You've come so far.
+
+        You've handled things people may never
+        even know about.
+
+        <br><br>
+
+        So please don't forget to be kind
+        to yourself too.
+
+        <br><br>
+
+        <strong>
+            You deserve the same love and patience
+            that you give to everyone else.
+        </strong>
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================================================
+     WEEKEND MESSAGE
+========================================================= -->
+
+<section
+    class="weekend-section"
+    id="weekend">
+
+    <div class="weekend-card">
+
+        <div class="weekend-icon">
+            🌷
+        </div>
+
+        <h2>
+            Happy Weekend! 
+        </h2>
+
+        <p>
+
+            Whatever happened this week,
+
+            <strong>
+                you made it through.
+            </strong>
+
+            <br><br>
+
+            Now it's time to put some of that
+            weight down.
+
+            You don't need to think about everything
+            that needs to be done.
+
+            You don't need to solve every problem.
+
+            <br><br>
+
+            Take a break.
+
+            Sleep a little longer.
+
+            Eat something you enjoy.
+
+            Watch something that makes you smile.
+
+            Go outside.
+
+            Listen to music.
+
+            Do absolutely nothing for a while.
+
+            <br><br>
+
+            This weekend doesn't have to be productive.
+
+            <strong>
+                It just needs to be yours.
+            </strong>
+
+            <br><br>
+
+            I hope the days ahead feel lighter,
+
+            quieter,
+
+            and kinder to you.
+
+            <br><br>
+
+            <strong>
+                Have a beautiful weekend ahead. 🌸
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     REST
+========================================================= -->
+
+<section class="rest-section">
+
+    <h2>
+        This weekend, please rest. 🌿
+    </h2>
+
+    <p class="rest-subtitle">
+        You deserve a little time where you
+        don't have to worry about everything.
+    </p>
+
+
+    <div class="rest-grid">
+
+
+        <div class="rest-card">
+
+            <div class="rest-icon">
+                😴
+            </div>
+
+            <h3>
+                Get some sleep
+            </h3>
+
+            <p>
+                Let your body catch up.
+                You don't have to feel guilty
+                for getting the rest you need.
+            </p>
+
+        </div>
+
+
+        <div class="rest-card">
+
+            <div class="rest-icon">
+                🎧
+            </div>
+
+            <h3>
+                Do something you enjoy
+            </h3>
+
+            <p>
+                Listen to your favorite songs,
+                watch a movie, play games,
+                or simply enjoy some quiet time.
+            </p>
+
+        </div>
+
+
+        <div class="rest-card">
+
+            <div class="rest-icon">
+                🌤️
+            </div>
+
+            <h3>
+                Forget work for a while
+            </h3>
+
+            <p>
+                The things waiting for you can wait.
+                Give yourself permission to enjoy
+                the weekend.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CHECKLIST
+========================================================= -->
+
+<section class="checklist-section">
+
+    <h2>
+        Your only weekend assignment 💌
+    </h2>
+
+    <p>
+        No deadlines. No pressure.
+        Just little things that might make you smile.
+    </p>
+
+
+    <div class="checklist">
+
+
+        <label class="task">
+
+            <input
+                type="checkbox"
+                onchange="updateProgress()">
+
+            <span>
+                Get enough sleep 😴
+            </span>
+
+        </label>
+
+
+        <label class="task">
+
+            <input
+                type="checkbox"
+                onchange="updateProgress()">
+
+            <span>
+                Eat something you really like 🍰
+            </span>
+
+        </label>
+
+
+        <label class="task">
+
+            <input
+                type="checkbox"
+                onchange="updateProgress()">
+
+            <span>
+                Listen to your favorite music 🎧
+            </span>
+
+        </label>
+
+
+        <label class="task">
+
+            <input
+                type="checkbox"
+                onchange="updateProgress()">
+
+            <span>
+                Do something that makes you happy 🌸
+            </span>
+
+        </label>
+
+
+        <label class="task">
+
+            <input
+                type="checkbox"
+                onchange="updateProgress()">
+
+            <span>
+                Forget your worries for a little while ☁️
+            </span>
+
+        </label>
+
+
+        <label class="task">
+
+            <input
+                type="checkbox"
+                onchange="updateProgress()">
+
+            <span>
+                Remind yourself that you're doing okay 🤍
+            </span>
+
+        </label>
+
+
+        <div class="progress-container">
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress"
+                    id="progress">
+                </div>
+
+            </div>
+
+            <div
+                class="progress-text"
+                id="progressText">
+
+                Weekend happiness: 0%
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MOTIVATIONAL QUOTES
+========================================================= -->
+
+<section class="motivation">
+
+    <h2>
+        A little encouragement ✨
+    </h2>
+
+    <p class="motivation-subtitle">
+        Whenever you need a reminder,
+        let the website choose one for you.
+    </p>
+
+
+    <div class="quote-box">
+
+        <div
+            class="quote"
+            id="quote">
+
+            "You don't have to have everything
+            figured out right now."
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="btn"
+        onclick="newQuote()">
+
+        I need another reminder 💜
+
+    </button>
+
+</section>
+
+
+
+<!-- =========================================================
+     MOOD
+========================================================= -->
+
+<section class="mood-section">
+
+    <h2>
+        How are you feeling today? 🌷
+    </h2>
+
+    <p>
+        There are no wrong answers.
+        Just pick whatever feels closest.
+    </p>
+
+
+    <div class="moods">
+
+        <button
+            class="mood"
+            onclick="moodMessage('tired')">
+
+            😴 Tired
+
+        </button>
+
+
+        <button
+            class="mood"
+            onclick="moodMessage('stressed')">
+
+            😵 Stressed
+
+        </button>
+
+
+        <button
+            class="mood"
+            onclick="moodMessage('sad')">
+
+            🥺 A little sad
+
+        </button>
+
+
+        <button
+            class="mood"
+            onclick="moodMessage('okay')">
+
+            🙂 I'm okay
+
+        </button>
+
+
+        <button
+            class="mood"
+            onclick="moodMessage('happy')">
+
+            😊 Feeling good
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="mood-result"
+        id="moodResult">
+
+        Choose one above...
+
+        I'll give you a little message. 💌
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     YOU GOT THIS
+========================================================= -->
+
+<section class="you-got-this">
+
+    <h2>
+        YOU GOT THIS. ✨
+    </h2>
+
+
+    <p>
+
+        Maybe this week wasn't easy.
+
+        Maybe there were moments when you
+        felt completely exhausted.
+
+        <br><br>
+
+        But you still made it here.
+
+        And that matters.
+
+        <br><br>
+
+        Don't underestimate yourself.
+
+        You've handled difficult days before.
+
+        You'll handle this too.
+
+        <br><br>
+
+        You don't need to run.
+
+        You don't need to have everything figured out.
+
+        <br><br>
+
+        Just keep moving.
+
+        Slowly.
+
+        Quietly.
+
+        At your own pace.
+
+        <br><br>
+
+        <strong>
+            You're doing better than you think.
+        </strong>
+
+    </p>
+
+
+    <button
+        class="btn"
+        onclick="youGotThis()">
+
+        I need a little motivation 💜
+
+    </button>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL
+========================================================= -->
+
+<section class="final">
+
+
+    <h2>
+        Have a beautiful weekend.
+    </h2>
+
+
+    <p>
+
+        I hope you get the chance to rest.
+
+        <br><br>
+
+        I hope you laugh.
+
+        I hope you eat good food.
+
+        I hope you listen to songs you love.
+
+        I hope you get some really good sleep.
+
+        <br><br>
+
+        And most importantly,
+
+        I hope you remember that you don't
+        have to carry everything all the time.
+
+        <br><br>
+
+        Sometimes,
+
+        it's okay to put everything down
+
+        and simply enjoy being you.
+
+        <br><br>
+
+        <strong>
+            Take care of yourself. 🌿
+        </strong>
+
+        <br><br>
+
+        <strong>
+            Rest well.
+            Smile more.
+            And have a really,
+            really good weekend. 🌸
+        </strong>
+
+    </p>
+
+
+    <br><br>
+
+
+    <button
+        class="btn"
+        onclick="releasePetals()">
+
+        One last little surprise 🌷
+
+    </button>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    Made with a little bit of care,
+    just to make your weekend a little brighter. 🌿
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+const bgMusic =
+    document.getElementById("bgMusic");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+bgMusic.volume = 0.35;
+
+
+/* Try autoplay */
+
+window.addEventListener("load", () => {
+
+    bgMusic.play()
+
+        .then(() => {
+
+            musicBtn.textContent =
+                "🎵 Music On";
+
+            musicBtn.classList.add(
+                "playing"
+            );
+
+        })
+
+        .catch(() => {});
+
+});
+
+
+/* Start music after interaction */
+
+function startMusic() {
+
+    bgMusic.play()
+
+        .then(() => {
+
+            musicBtn.textContent =
+                "🎵 Music On";
+
+            musicBtn.classList.add(
+                "playing"
+            );
+
+        })
+        .catch(() => {});
+
+}
+
+
+document.addEventListener(
+    "click",
+    startMusic,
+    {
+        once: true
+    }
+);
+
+
+/* Music toggle */
+
+function toggleMusic() {
+
+    if(bgMusic.paused) {
+
+        bgMusic.play();
+
+        musicBtn.textContent =
+            "🎵 Music On";
+
+        musicBtn.classList.add(
+            "playing"
+        );
+
+    } else {
+
+        bgMusic.pause();
+
+        musicBtn.textContent =
+            "🔇 Music Off";
+
+        musicBtn.classList.remove(
+            "playing"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SCROLL TO PHOTO
+========================================================= */
+
+function scrollToPhoto() {
+
+    document
+        .getElementById("photo")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =========================================================
+   QUOTES
+========================================================= */
+
+const quotes = [
+
+    "You don't have to have everything figured out right now. 🌿",
+
+    "This weekend, choose rest without feeling guilty.",
+
+    "You survived another week. That's already something to be proud of.",
+
+    "Small progress is still progress.",
+
+    "You are allowed to slow down.",
+
+    "You don't need to be productive every second.",
+
+    "One difficult week doesn't define your entire life.",
+
+    "Your worth isn't measured by how much you accomplish.",
+
+    "It's okay if all you did today was survive.",
+
+    "You deserve kindness, especially from yourself.",
+
+    "There are still beautiful days waiting for you.",
+
+    "Don't rush yourself. Good things take time.",
+
+    "You are stronger than you realize.",
+
+    "Rest now. Tomorrow can wait.",
+
+    "You don't need permission to take care of yourself.",
+
+    "You are doing better than you think.",
+
+    "It's okay to start again.",
+
+    "Your future self will be proud that you kept going.",
+
+    "You matter more than you know.",
+
+
+];
+
+
+function newQuote() {
+
+    const box =
+        document.querySelector(
+            ".quote-box"
+        );
+
+    const text =
+        document.getElementById(
+            "quote"
+        );
+
+
+    box.classList.remove(
+        "animate"
+    );
+
+
+    void box.offsetWidth;
+
+
+    const random =
+        quotes[
+            Math.floor(
+                Math.random()
+                * quotes.length
+            )
+        ];
+
+
+    text.textContent =
+        random;
+
+
+    box.classList.add(
+        "animate"
+    );
+
+}
+
+
+/* =========================================================
+   CHECKLIST
+========================================================= */
+
+function updateProgress() {
+
+    const tasks =
+        document.querySelectorAll(
+            ".task input"
+        );
+
+    const checked =
+        document.querySelectorAll(
+            ".task input:checked"
+        );
+
+    const percentage =
+        Math.round(
+            (
+                checked.length
+                /
+                tasks.length
+            )
+            * 100
+        );
+
+
+    document.getElementById(
+        "progress"
+    ).style.width =
+        percentage + "%";
+
+
+    document.getElementById(
+        "progressText"
+    ).textContent =
+        "Weekend happiness: "
+        + percentage
+        + "%";
+
+
+    tasks.forEach(input => {
+
+        const task =
+            input.closest(
+                ".task"
+            );
+
+
+        if(input.checked) {
+
+            task.classList.add(
+                "done"
+            );
+
+        } else {
+
+            task.classList.remove(
+                "done"
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   MOOD
+========================================================= */
+
+const moodMessages = {
+
+    tired:
+        "Then please rest. You don't have to feel guilty about being tired. Your body is asking for a little kindness. 😴🤍",
+
+    stressed:
+        "Leave some of those worries for Monday. Right now, you deserve a little peace. You don't have to solve everything this weekend. 🌿",
+
+    sad:
+        "It's okay not to be okay all the time. Be gentle with yourself today. Hopefully this weekend gives your heart a little room to feel lighter. 🤍",
+
+    okay:
+        "I'm glad you're doing okay. Keep that little smile going and enjoy the weekend. You deserve some peaceful moments. 🌸",
+
+    happy:
+        "That's wonderful! Hold on to that feeling. Do more of whatever makes your heart feel this light. ✨"
+
+};
+
+
+function moodMessage(mood) {
+
+    const result =
+        document.getElementById(
+            "moodResult"
+        );
+
+
+    result.style.opacity =
+        "0";
+
+
+    setTimeout(() => {
+
+        result.textContent =
+            moodMessages[mood];
+
+        result.style.opacity =
+            "1";
+
+    }, 250);
+
+}
+
+
+/* =========================================================
+   MOTIVATION BURST
+========================================================= */
+
+function youGotThis() {
+
+    const messages = [
+
+        "YOU GOT THIS! ✨",
+
+        "KEEP GOING! 🌱",
+
+        "YOU ARE STRONGER THAN YOU THINK! 💜",
+
+        "ONE STEP AT A TIME! 🌿",
+
+        "DON'T GIVE UP! ✨",
+
+        "YOU CAN DO THIS! 🌸"
+
+    ];
+
+
+    const selected =
+        messages[
+            Math.floor(
+                Math.random()
+                * messages.length
+            )
+        ];
+
+
+    const centerX =
+        window.innerWidth / 2;
+
+    const centerY =
+        window.innerHeight / 2;
+
+
+    for(let i = 0; i < 18; i++) {
+
+        const piece =
+            document.createElement(
+                "div"
+            );
+
+
+        piece.className =
+            "burst-piece";
+
+
+        piece.textContent =
+            selected;
+
+
+        piece.style.left =
+            centerX + "px";
+
+
+        piece.style.top =
+            centerY + "px";
+
+
+        const angle =
+            Math.random()
+            * Math.PI
+            * 2;
+
+
+        const distance =
+            100
+            +
+            Math.random()
+            * 250;
+
+
+        piece.style.setProperty(
+            "--x",
+            Math.cos(angle)
+            * distance
+            + "px"
+        );
+
+
+        piece.style.setProperty(
+            "--y",
+            Math.sin(angle)
+            * distance
+            + "px"
+        );
+
+
+        document.body.appendChild(
+            piece
+        );
+
+
+        setTimeout(() => {
+
+            piece.remove();
+
+        }, 1600);
+
+    }
+
+}
+
+
+/* =========================================================
+   PETAL SURPRISE
+========================================================= */
+
+function releasePetals() {
+
+    const items = [
+
+        "🌸",
+        "🌷",
+        "🌼",
+        "🤍",
+        "✨",
+        "💜",
+        "🍃"
+
+    ];
+
+
+    for(let i = 0; i < 50; i++) {
+
+        const petal =
+            document.createElement(
+                "div"
+            );
+
+
+        petal.className =
+            "petal";
+
+
+        petal.textContent =
+            items[
+                Math.floor(
+                    Math.random()
+                    * items.length
+                )
+            ];
+
+
+        petal.style.left =
+            Math.random()
+            * 100
+            + "vw";
+
+
+        petal.style.animationDuration =
+            (
+                4
+                +
+                Math.random()
+                * 5
+            )
+            + "s";
+
+
+        petal.style.animationDelay =
+            Math.random()
+            * 2
+            + "s";
+
+
+        document.body.appendChild(
+            petal
+        );
+
+
+        setTimeout(() => {
+
+            petal.remove();
+
+        }, 10000);
+
+    }
+
+}
+
+
+/* =========================================================
+   SPARKLES
+========================================================= */
+
+function createSpark() {
+
+    const spark =
+        document.createElement(
+            "div"
+        );
+
+
+    spark.className =
+        "spark";
+
+
+    spark.style.left =
+        Math.random()
+        * 100
+        + "vw";
+
+
+    spark.style.animationDuration =
+        (
+            5
+            +
+            Math.random()
+            * 5
+        )
+        + "s";
+
+
+    document.body.appendChild(
+        spark
+    );
+
+
+    setTimeout(() => {
+
+        spark.remove();
+
+    }, 10000);
+
+}
+
+
+setInterval(
+    createSpark,
+    700
+);
+
+
+/* =========================================================
+   BUTTERFLIES
+========================================================= */
+
+function createButterfly() {
+
+    const butterfly =
+        document.createElement(
+            "div"
+        );
+
+
+    butterfly.className =
+        "butterfly";
+
+
+    butterfly.textContent =
+        "🦋";
+
+
+    butterfly.style.left =
+        Math.random()
+        * 80
+        + "vw";
+
+
+    butterfly.style.animationDuration =
+        (
+            9
+            +
+            Math.random()
+            * 6
+        )
+        + "s";
+
+
+    document.body.appendChild(
+        butterfly
+    );
+
+
+    setTimeout(() => {
+
+        butterfly.remove();
+
+    }, 16000);
+
+}
+
+
+setInterval(
+    createButterfly,
+    4500
+);
+
+
+/* Initial sparkles */
+
+for(let i = 0; i < 12; i++) {
+
+    setTimeout(
+        createSpark,
+        i * 350
+    );
+
+}
+
+</script>
+
+</body>
+
+</html>
+```
